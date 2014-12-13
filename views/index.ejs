@@ -1,11 +1,43 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <title><%= title %></title>
+<head>
+    <title>Welcome</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+</head>
+
+<body>
+    <h1 align="center">NodeJs Gumball Machine</h1>
+    <!-- FORM SECTION -->
+    <form name="gumballform" method="post" action="">
+        <input type="hidden" name="state" id="state" value='<%= state %>' />
+        <input type="hidden" name="model" id="model" value='<%= modelNumber %>' />
+        <input type="hidden" name="serial" id="serial" value='<%= serialNumber %>' />
+        <input type="hidden" name="timestamp" id="timestamp" value="<%= timestamp %>" />
+        <input type="hidden" name="hash" id="hash" value="<%= hash %>" />
+        <p>
+            <div align="center">
+                <textarea name="message" cols="54" rows="10" readonly id="message">
+            --------------------------------------------------
+            Mighty Gumball, Inc.
+            Node.js Standing Gumball
+            Model# <%= modelNumber %>
+            Serial# <%= serialNumber %>
+            --------------------------------------------------
+
+            Current State: <%= state %>
+                </textarea>
+            </div>
+        </p>
+        <p align="center">
+            <img src="/public/images/giant-gumball-machine.jpg"  width="385" height="316">
+        </p>
+        <p align="center">
+            <input type="submit" name="event" id="btnInsertQuarter" value="Insert Quarter">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" name="event" id="btnTurnCrank" value="Turn Crank">
+        </p>
+    </form>
+    <!-- END FORM SECTION -->
+</body>
 </html>
