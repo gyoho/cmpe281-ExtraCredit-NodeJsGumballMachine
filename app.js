@@ -57,11 +57,11 @@ var db_init = function (callback) {
         console.log("INIT: authentication...");
         db.authenticate(db_user, db_pwd, function(err, res) {
             if(!err) {
-                console.log("autenticated!");
+                console.log("INIT: autenticated!");
                 cb(null, callback);
             }
             else {
-                console.log("cannot autenticated!");
+                console.log("INIT: cannot autenticated!");
                 console.log(err);
                 process.exit(-1);
             }
